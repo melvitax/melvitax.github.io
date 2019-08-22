@@ -1,0 +1,146 @@
+---
+layout: default
+title: "Melvin Rivera: UX Product Designer"
+description: "Design and Development portfolio"
+style: home
+---
+
+<!-- Intro -->
+<div class="cover-wrapper d-flex w-100 mx-auto flex-column">
+    <video class="bg_video" src="/assets/home/subway.mp4" poster="/assets/home/subway.jpg" style="background-image:url(/assets/home/subway.jpg)" autoplay muted loop preload>
+      <source src="/assets/home/subway.mp4" type="video/quicktime">
+    </video>
+  <article class="cover w-100 p-3 ">
+    <div class="row"><h1>Hello,</h1></div>
+    <div class="row mb-3">
+        <div class="col-12 col-sm-3 col-lg-2 themed-grid-col"><img class="avatar" src="/assets/favicon-192x192.jpg" width="148" height="148" /></div>
+        <div class="col-12 col-sm-9 col-lg-10 themed-grid-col">
+            <p>Melvin Rivera is an award-winning designer, developer, and speaker currently living in NY. His background as a co-founder of Mostasa, a design company in the heart of Hollywood, gave him the privilege of working with Fortune 500 companies such as Apple, Universal, and MGM. </p>
+
+            <p>Today, he's a Senior UX product designer at NBC Universal working on the next generation of news apps.</p>
+        
+            <p>He <a href="https://github.com/melvitax" title="GitHub profile">codes</a>, <a href="https://www.instagram.com/p/Befwgt3gqtx/?taken-by=melvitax" title="picture on Instagram">bakes</a>, <a href="https://www.youtube.com/watch?v=bFaRlONVcAs" title="video on YouTube">travels</a>, <a href="https://www.instagram.com/melvitax/" title="Instagram profile">photographs</a>, <a href="https://www.instagram.com/p/BFrBs0nwBvE/?taken-by=melvitax" title="picture on Instagram">runs</a> and releases apps under the  <a href="http://allforces.com" title="allforces.com">All Forces</a> label.</p>
+
+        </div>
+        <div class="col-12 col-sm-3 col-lg-2 themed-grid-col">&nbsp;</div>
+        <div class="col-12 col-sm-4 col-lg-5 themed-grid-col">
+            <h3>Info</h3>
+              <p>
+                <a title="resume" href="/assets/resume.pdf"><i class="fas fa-file-pdf"></i> Download Resumé</a><br />
+                <a title="LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin }}"><i class="fab fa-linkedin"></i> LinkedIn</a>
+              </p> 
+          </div>
+          <div class="col-12 col-sm-4 col-lg-5 themed-grid-col">
+          <h3>Social</h3>
+            <p>
+              <a title="Twitter" href="http://twitter.com/{{ site.twitter }}"><i class="fab fa-twitter"></i> Twitter</a><br />
+              <a title="Instagram" href="http://instagram.com/{{ site.instagram }}"><i class="fab fa-instagram"></i> Instagram</a><br />
+              <a title="GitHub" href="http://github.com/{{ site.github }}"><i class="fab fa-github"></i> Github</a> <br />
+            </p>
+        </div>
+      </div>
+  </article>
+</div>
+
+<!-- Featured -->
+{% assign projects = 'nbc-news' %}
+{% for project in projects %}
+{% assign item = site.pages | where: 'slug', project | first %}
+<div style="background-color: {{item.bg-color}}; color: {{item.color}}">
+  <div class="container py-5">
+    <header class="py-3">
+      <small>FEATURED PROJECT</small>
+      <h2 class="display-4 font-weight-normal">{{item.title}}  <span style="color: {{item.secondary-color}}"> - {{item.description}}</span></h2>
+    </header>
+    <div id="{{project}}Carousel" class="carousel slide position-relative" data-ride="carousel">
+      <ol class="carousel-indicators">
+        {% for image in item.featured %}
+        <li data-target="#{{project}}Carousel" data-slide-to="{{forloop.index0}}" class="{% if forloop.first  %}active{% endif %}"></li>
+        {% endfor %}
+      </ol>
+      <div class="carousel-inner">
+        {% for featured_item in item.featured %}
+        {% assign file_ext = featured_item | split: "." | last %}
+        
+        <div class="carousel-item {% if forloop.first  %}active{% endif %}">
+            {% if file_ext == "mp4" or file_ext == "m4v" or file_ext == "mov" %}
+            <div class="featured_video_wrapper">
+              <div class="featured_video_container">
+                <video id="{{project}}CarouselVideo{{forloop.index0}}" class="featured_video " src="{{ item.dir }}{{ featured_item }}" muted autoplay loop >
+                <source src="{{ item.dir }}{{ featured_item }}" type="video/quicktime">
+              </video>
+              </div>
+            </div>
+            {% else %}
+            <img class="d-block w-100" style="height: auto" src="{{ item.dir }}{{ featured_item }}" width="2000" height="1402" itemprop="img" alt=""/>
+            {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <a class="carousel-control-prev" href="#{{project}}Carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#{{project}}Carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="row mb-3 py-3" style="color: {{item.secondary-color}}">
+      <div class="col-12 col-sm-6 themed-grid-col" >
+        <strong>Client:</strong> {{item.client}}<br />
+        <strong>For:</strong> {{item.for}}<br />
+        <strong>Role:</strong> {{item.role}}<br />
+        <strong>Category:</strong> {{item.category}}
+      </div>
+      <div class="col-12 col-sm-6  themed-grid-col">
+          <p>{{item.content}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<!-- Portfolio -->
+<div class="portfolio" itemscope itemtype="http://schema.org/ImageGallery">
+  <div class="container py-5">
+    <h2 class="display-3 font-weight-normal">Portfolio</h2>
+    <p class="lead font-weight-normal">Highlights from select projects</p>
+  </div>
+  <div class="row">
+
+      {% assign portfolio = site.pages | where: "type", "portfolio" | sort: "year", "last" | reverse%}
+      {% for item in portfolio %}
+      <figure class="item col-6 col-sm-4 md-3 col-lg-2 p-0 m-0" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="{{ item.dir }}{{ item.image }}" itemprop="contentUrl" {% if item.placeholder %}data-placeholder="{{ item.placeholder }}"{% endif %} data-width="{{item.width}}" data-height="{{item.height}}" data-index="{{ forloop.index0 }}" data-meta="{{item.category}} - {{item.role}} - {% if item.client %}{{item.client}}{% endif %}{% if item.for %} - {{item.for}}{% endif %}{% if item.webpage %} - <a href='{{item.webpage}}'>Website</i>
+          </a>{% endif %}"><img class="" src="{{ item.dir }}/thumb.jpg" width="300" height="300" itemprop="thumbnail" alt="{{item.title}} - {{item.description}}"/></a>
+          <figcaption class="text-center position-absolute w-100">{{item.title}}</figcaption>
+      </figure>
+      {% endfor %}
+
+  </div>
+  <div class="container py-5">
+    <img src="/assets/companies.svg" width="1860" height="760" />
+  </div>
+</div>
+
+<!-- Accolades -->
+<div class="accolades" >
+  <div class="container py-5">
+      <div class="row">
+        {% for item in site.data.accolades %}
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card-wrapper">
+              <div class="card mb-4 bg-dark text-white-50 text-center">
+                <div class="card-header bg-transparent ">
+                  {{item.year}} {{item.type}}
+                </div>
+                <div class="card-body bg-dark text-white-50">
+                  <h4 class="card-title pricing-card-title text-white">{{item.title}}</h4>
+                  {{item.info}}<br />
+                </div>
+              </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>

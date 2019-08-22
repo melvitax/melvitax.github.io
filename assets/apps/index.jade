@@ -1,0 +1,21 @@
+#js-article.container(role="main")
+  header#js-article-header(style="background-image:url(/apps/header.jpg)")
+    h1.page-title #{title} 
+  #js-article-body
+    .apps
+      .app 
+        a(href="/nota"): img(src="/#{current.path[0]}/nota-icon.png")
+        h2: a(href="/nota") Nota
+        p A piano tool for musicians.
+      .app 
+        a(href="/margana"): img(src="/#{current.path[0]}/margana-icon.png")
+        h2: a(href="/margana") Margana - Word Game
+        p A fun anagram-style word game.
+      .app 
+        a(href="/thirtyaday"): img(src="/#{current.path[0]}/thirtyaday-icon.png")
+        h2: a(href="/thirtyaday") thirtyaday fitness
+        p A minimalistic fitness tracker app.
+      .app 
+        a(href="/thinkertoy"): img(src="/#{current.path[0]}/thinkertoy-icon.png")
+        h2: a(href="/thinkertoy") ThinkerToy: Shapes
+        p A geometric shape puzzle creation tool for the iPad.

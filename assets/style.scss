@@ -1,0 +1,245 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "../vendor/bootstrap-4.3.1/_scss/bootstrap.scss";
+@import "../vendor/fontawesome-5.9.0/_scss/fontawesome";
+@import "../vendor/fontawesome-5.9.0/_scss/solid";
+@import "../vendor/fontawesome-5.9.0/_scss/brands";
+
+html, body {
+    height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+}
+a:hover {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+/***************
+ *   Cover    *
+****************/
+.cover-wrapper {
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    min-height: 100vh;
+}
+.cover-wrapper video {
+    transform: translate(-50%, -50%);
+    transform: transition(1s opacity);
+    position: absolute;
+    background-color: #000;
+    z-index: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+}
+.cover {
+    font-size: 1.5rem;
+    max-width: 60rem;
+    margin: 20vh auto 0 auto
+}
+.cover .avatar {
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: auto;
+    max-height: 148px;
+    max-width: 148px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+.cover h1 {
+    font-size: 24vw;
+    z-index: 1;
+}
+
+/***************
+ *  Featured   *
+****************/
+.carousel-indicators li {
+    overflow: hidden;
+    border-radius: 50% !important;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    margin: 0.5em;
+}
+.featured_video_wrapper {
+    width: 100%;
+    padding-top: 70.1%;
+    height: 0px;
+    position: relative;
+}
+.featured_video_container {
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0px;
+    position: absolute;
+    top: 0;
+}
+.featured_video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/***************
+ *  Portfolio   *
+****************/
+.portfolio {
+    background-color: #000;
+    color: white;
+}
+.portfolio .row {
+    margin: 0;
+}
+.portfolio .row:hover .item {
+    opacity: 0.5;
+}
+.portfolio .item {
+    transition: ease-in-out 0.35s all !important;
+    z-index: 1;
+}
+.portfolio .item figcaption {
+    display: none;
+}
+.portfolio .row .item:hover {
+    opacity: 1;
+    transition: ease-in-out 0.15s all !important;
+    transform: scale(1.2);
+    box-shadow: 0px 20px 35px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 999;
+}
+.portfolio .item:hover figcaption {
+    display: block;
+}
+.portfolio img {
+    width: 100%;
+    height: 100%;
+}
+.clients img {
+    width: 100%;
+    height: auto;
+}
+
+/***************
+ *   Article    *
+****************/
+// .container {
+//     max-width: 80rem;
+//     padding-left: 1.25rem;
+//     padding-right: 1.25rem;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+@media (min-width: 40em) {
+    .full-width {
+      width: 100vw;
+      transform: translateX(calc((40em - 100vw)/2));
+    }
+    
+}
+.full-width img {
+    width: 100%;
+    height: auto;
+}
+
+/***************
+ *  Accolades  *
+****************/
+.accolades:hover .card-wrapper {
+    opacity: 0.7;
+}
+.accolades .card-wrapper {
+    transition: ease 0.25s all !important; 
+}
+.accolades .card-wrapper:hover {
+    transform: translateY(-18px) !important;
+    box-shadow: 0px 20px 25px 0px rgba(0,0,0,0.1);
+    cursor: pointer;
+    opacity: 1;
+}
+  
+  
+
+/***************
+ *   Footer    *
+****************/
+footer {
+    background: #111;
+    color: #555;
+    padding: 4em 0;
+}
+
+
+/***************
+ *   404    *
+****************/
+.not-found video {  
+    position: fixed; 
+    right: 0; 
+    bottom: 0; 
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto; 
+    height: auto; 
+    z-index: -100;
+}
+
+/***************
+ *  Effects   *
+****************/
+
+.cover-wrapper {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+     -o-animation: fadein 2s; /* Opera < 12.1 */
+        animation: fadein 2s;
+}
+
+@keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}

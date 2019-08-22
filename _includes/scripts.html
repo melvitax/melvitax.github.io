@@ -1,0 +1,32 @@
+<!-- Jquery -->
+<script src="/vendor/jquery-3.4.1/jquery.min.js"></script> 
+<!-- Bootsrap -->
+<script async src="/vendor/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- PhotoSwipe-->
+<script src="vendor/photoswipe-4.1.3/photoswipe.min.js"></script> 
+ <script src="vendor/photoswipe-4.1.3/photoswipe-ui-default.min.js"></script> 
+<!-- Main JS-->
+<script async src="/assets/main.js"></script>
+<!-- Netlify CMS -->
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+<!-- Analytics -->
+{% if (site.ga) %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '{{ site.ga }}', 'auto');
+  ga('send', 'pageview');
+</script>
+{% endif %}

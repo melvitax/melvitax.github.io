@@ -1,0 +1,34 @@
+title: "Melvitax"
+author: "Melvin Rivera"
+description: "Melvin Rivera is a UX Product Designer & Developer currently based in New York City."
+keywords: "Melvin Rivera, Designer, UX, Develper, Mobile, OTT"
+url: "http://melvitax.com"
+domain: "melvitax.com"
+socialimage: "/images/social-image.jpg"
+analytics: false
+ga: "UA-20417568-2"
+disqus: false,
+markdown: kramdown
+exclude: ['node_modules', 'README.md', 'package.json']
+timezone: 'America/New_York'
+
+sass:
+    style: compressed
+    sass_dir: assets
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+      style: page
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+  envs: []
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
