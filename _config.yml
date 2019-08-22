@@ -6,7 +6,6 @@ url: "http://melvitax.com"
 domain: "melvitax.com"
 socialimage: "/images/social-image.jpg"
 analytics: false
-ga: "UA-20417568-2"
 disqus: false,
 markdown: kramdown
 exclude: ['node_modules', 'README.md', 'package.json']
