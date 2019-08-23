@@ -5,11 +5,11 @@ keywords: "Melvin Rivera, Designer, UX, Develper, Mobile, OTT"
 url: "http://melvitax.com"
 domain: "melvitax.com"
 social:
-  - image: "/assets/melvitax-social.jpg"
-  - twitter: "melvitax"
-  - instagram: "melvitax"
-  - github: "melvitax"
-  - linkedin: "melvitax"
+  image: "/assets/melvitax-social.jpg"
+  twitter: "melvitax"
+  instagram: "melvitax"
+  github: "melvitax"
+  linkedin: "melvitax"
 analytics: false
 disqus: false,
 markdown: kramdown
