@@ -4,7 +4,12 @@ description: "Melvin Rivera is a UX Product Designer & Developer currently based
 keywords: "Melvin Rivera, Designer, UX, Develper, Mobile, OTT"
 url: "http://melvitax.com"
 domain: "melvitax.com"
-socialimage: "/images/social-image.jpg"
+social:
+  - image: "/assets/melvitax-social.jpg"
+  - twitter: "melvitax"
+  - instagram: "melvitax"
+  - github: "melvitax"
+  - linkedin: "melvitax"
 analytics: false
 disqus: false,
 markdown: kramdown
