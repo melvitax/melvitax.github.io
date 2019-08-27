@@ -7,7 +7,7 @@ style: home
 
 <!-- Intro -->
 <div class="cover-wrapper d-flex w-100 mx-auto flex-column">
-    <video class="bg_video" src="/assets/home/subway.mp4" poster="/assets/home/subway.jpg" style="background-image:url(/assets/home/subway.jpg)" autoplay muted loop preload>
+    <video class="bg_video" src="/assets/home/subway.mp4" poster="/assets/home/subway.jpg" style="background-image:url(/assets/home/subway.jpg)" autoplay muted loop playsinline>
       <source src="/assets/home/subway.mp4" type="video/quicktime">
     </video>
   <article class="cover w-100 p-3 ">
@@ -66,7 +66,7 @@ style: home
             {% if file_ext == "mp4" or file_ext == "m4v" or file_ext == "mov" %}
             <div class="featured_video_wrapper">
               <div class="featured_video_container">
-                <video id="{{project}}CarouselVideo{{forloop.index0}}" class="featured_video " src="{{ item.dir }}{{ featured_item }}" muted autoplay loop >
+                <video id="{{project}}CarouselVideo{{forloop.index0}}" class="featured_video " src="{{ item.dir }}{{ featured_item }}" muted autoplay loop playsinline>
                 <source src="{{ item.dir }}{{ featured_item }}" type="video/quicktime">
               </video>
               </div>
